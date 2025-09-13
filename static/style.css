@@ -1,0 +1,717 @@
+/* WACK SHOP - Modern & Stylish Theme */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #36454F; /* Charcoal Gray */
+    --secondary-color: #2b3842; /* Darker Gray */
+    --accent-color: #4CAF50; /* Green */
+    --text-color: #f0f0f0; /* Off-white */
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+    --border-radius: 10px;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-title:hover {
+    color: var(--accent-color);
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 3rem;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: var(--text-color);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.btn-primary:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #555;
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #666;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: var(--text-color);
+}
+
+.btn-success:hover {
+    background-color: #3e8e41;
+}
+
+.mt-3 {
+    margin-top: 1.5rem;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.flashes li {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.flashes li.success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: var(--success-color);
+}
+
+.flashes li.error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: var(--error-color);
+}
+
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #3a4b57;
+    border-radius: 5px;
+}
+
+.info-group label {
+    font-weight: 400;
+}
+
+.status-premium {
+    color: #FFD700; /* Gold */
+    font-weight: 600;
+}
+
+.status-free {
+    color: #aaa;
+}
+
+.status-expired {
+    color: var(--error-color);
+    font-weight: 600;
+}
+
+.status-info {
+    color: #888;
+}
+
+.voucher-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.voucher-icon:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.main-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    animation: slideIn 0.8s ease-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-out;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.rental-terms {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    text-align: left;
+    border: 1px solid #444;
+}
+
+.rental-terms h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.rental-terms p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.price-highlight {
+    color: var(--success-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.generated-slip {
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* WACK SHOP - Modern & Stylish Theme */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #36454F; /* Charcoal Gray */
+    --secondary-color: #2b3842; /* Darker Gray */
+    --accent-color: #4CAF50; /* Green */
+    --text-color: #f0f0f0; /* Off-white */
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+    --border-radius: 10px;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-title:hover {
+    color: var(--accent-color);
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 3rem;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: var(--text-color);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.btn-primary:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #555;
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #666;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: var(--text-color);
+}
+
+.btn-success:hover {
+    background-color: #3e8e41;
+}
+
+.mt-3 {
+    margin-top: 1.5rem;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.flashes li {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.flashes li.success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: var(--success-color);
+}
+
+.flashes li.error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: var(--error-color);
+}
+
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #3a4b57;
+    border-radius: 5px;
+}
+
+.info-group label {
+    font-weight: 400;
+}
+
+.status-premium {
+    color: #FFD700; /* Gold */
+    font-weight: 600;
+}
+
+.status-free {
+    color: #aaa;
+}
+
+.status-expired {
+    color: var(--error-color);
+    font-weight: 600;
+}
+
+.status-info {
+    color: #888;
+}
+
+.status-banned {
+    color: #F44336; /* Red */
+    font-weight: 600;
+}
+
+.voucher-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.voucher-icon:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.main-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    animation: slideIn 0.8s ease-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 2rem;
+    animation: slideIn 1s ease-out;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.rental-terms {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    text-align: left;
+    border: 1px solid #444;
+}
+
+.rental-terms h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.rental-terms p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.price-highlight {
+    color: var(--success-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.generated-slip {
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
