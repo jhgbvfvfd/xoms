@@ -1,0 +1,89 @@
+{% extends "admin/master.html" %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1>Dashboard</h1>
+        <p>ยินดีต้อนรับสู่แผงควบคุม Admin</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">ผู้ใช้งานทั้งหมด</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 class="text-center">{{ total_users }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">ผู้ใช้งาน VIP</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 class="text-center">{{ premium_users }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">ยอดเช่าทั้งหมด</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 class="text-center">{{ total_rentals }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">รายได้รวม</h3>
+                </div>
+                <div class="panel-body">
+                    <h1 class="text-center">{{ total_rentals_amount | int }} บาท</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">IP ล่าสุดที่เข้าสู่ระบบ</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ชื่อผู้ใช้</th>
+                                <th>IP Address</th>
+                                <th>เวลา</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for log in last_logins %}
+                            <tr>
+                                <td>{{ log.user.username }}</td>
+                                <td>{{ log.ip_address }}</td>
+                                <td>{{ log.timestamp.strftime('%d/%m/%Y %H:%M:%S') }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{{ url_for('user.index_view') }}" class="btn btn-primary">จัดการผู้ใช้</a>
+        <a href="{{ url_for('admin.config') }}" class="btn btn-warning">ตั้งค่าเว็บไซต์</a>
+    </div>
+
+</div>
+{% endblock %}

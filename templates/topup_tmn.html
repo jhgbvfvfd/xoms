@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}เติมเงิน TrueMoney Wallet{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="box-container">
+        <h2>เติมเงิน TrueMoney Wallet</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div class="rental-terms">
+            <h3>ข้อกำหนดการเช่า</h3>
+            <p><strong>ราคา:</strong> <span class="price-highlight">{{ role_price }} บาท</span></p>
+            <p><strong>ระยะเวลา:</strong> สามารถใช้งานสลิปปลอมได้ {{ vip_days }} วัน</p>
+        </div>
+        
+        <p>กรุณาวางลิงก์อังเปา (Ang Pao) ด้านล่างเพื่อเช่าระบบ</p>
+        <img src="https://wackshop.xnlc.xyz/assets/icon/voucher.png" alt="Voucher Icon" class="voucher-icon">
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="voucher_link">ลิงก์อังเปา:</label>
+                <input type="text" id="voucher_link" name="voucher_link" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">ยืนยันการเติมเงิน</button>
+        </form>
+        <a href="{{ url_for('account') }}" class="btn btn-secondary mt-3">กลับหน้าบัญชี</a>
+    </div>
+</div>
+{% endblock %}

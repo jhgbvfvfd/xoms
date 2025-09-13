@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site_name }} - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="https://img5.pic.in.th/file/secure-sv1/1000289186.png" alt="WACK SHOP Logo" class="logo">
+            <a href="/" class="site-title">{{ site_name }}</a>
+        </div>
+        <nav>
+            <ul>
+                {% if session.username %}
+                <li><a href="{{ url_for('account') }}">บัญชีของฉัน</a></li>
+                <li><a href="{{ url_for('logout') }}">ออกจากระบบ</a></li>
+                {% else %}
+                <li><a href="{{ url_for('login') }}">เข้าสู่ระบบ</a></li>
+                <li><a href="{{ url_for('register') }}">สมัครสมาชิก</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

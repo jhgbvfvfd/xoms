@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}หน้าหลัก{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <h1 class="main-title">ยินดีต้อนรับสู่ {{ site_name }}</h1>
+    <p class="subtitle">เช่าระบบสร้างสลิปได้ง่ายๆ และรวดเร็ว</p>
+    
+    <div class="button-group">
+        <a href="{{ url_for('login') }}" class="btn btn-primary btn-large">
+            เข้าสู่ระบบ
+        </a>
+        <a href="{{ url_for('register') }}" class="btn btn-secondary btn-large">
+            สมัครสมาชิก
+        </a>
+    </div>
+</div>
+{% endblock %}

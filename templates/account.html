@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}หน้าบัญชี{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="box-container">
+        <h2>ข้อมูลบัญชี</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        <p>ยินดีต้อนรับ, {{ user.username }}!</p>
+        
+        <div class="info-group">
+            <label>สถานะ:</label>
+            {% if user.is_banned %}
+                <span class="status-banned">ถูกแบน</span>
+            {% elif user.is_premium %}
+                <span class="status-premium">VIP</span>
+            {% else %}
+                <span class="status-free">ผู้ใช้ทั่วไป</span>
+            {% endif %}
+        </div>
+        
+        {% if user.is_premium %}
+            <div class="info-group">
+                <label>คงเหลือเวลา:</label>
+                <span>{{ time_remaining }}</span>
+            </div>
+            <a href="{{ url_for('fake_slip') }}" class="btn btn-primary mt-3">สร้างสลิปปลอม</a>
+        {% elif is_expired %}
+            <p class="status-expired">สถานะ VIP ของคุณหมดอายุแล้ว กรุณาเช่าใหม่เพื่อใช้งานต่อ</p>
+            <a href="{{ url_for('topup_tmn') }}" class="btn btn-success">เติมเงินเพื่อเช่าระบบ</a>
+        {% elif not user.is_banned %}
+            <p class="status-info">คุณสามารถเช่าระบบเพื่อใช้งานฟังก์ชันพิเศษได้</p>
+            <a href="{{ url_for('topup_tmn') }}" class="btn btn-success">เติมเงินเพื่อเช่าระบบ</a>
+        {% endif %}
+        
+        <a href="{{ url_for('logout') }}" class="btn btn-secondary mt-3">ออกจากระบบ</a>
+    </div>
+</div>
+{% endblock %}
